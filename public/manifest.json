@@ -1,0 +1,27 @@
+{
+    "name": "Clipro", 
+    "description": "Clipboard history tool", 
+    "version": "8.0",
+    "manifest_version": 3, 
+    "permissions": [ 
+        "clipboardWrite",
+        "clipboardRead", 
+        "storage", 
+        "activeTab", 
+        "tabs", 
+        "contextMenus",
+        "offscreen"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html"
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["https://*/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
